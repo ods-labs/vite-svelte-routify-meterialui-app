@@ -1,5 +1,17 @@
-/* variables.scss is imported via vite.config.js prependData processor */
+/* Global app style */
 
-body {
-  margin: $padding-normal;
+@import "../node_modules/chota/dist/chota.min.css";
+/* Chota override/setup */
+:root {
+    --color-primary: #{$purple};
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #747681;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --grid-maxWidth: 120rem;
+    --grid-gutter: 2rem;
+    --font-size: 1.6rem;
+    --font-family: "Roboto", sans-serif;
 }
+

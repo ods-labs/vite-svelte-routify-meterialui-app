@@ -4,5 +4,5 @@ module.exports = {
     disableDependencyReinclusion: ['@roxi/routify'],
     preprocess: preprocess({
         postcss: true
-    })
+    }),
 };

@@ -1,26 +1,28 @@
 <script>
-    let world = 'World !';
+    import {Button, Icon} from 'svelte-chota';
+    import {mdiFishOff} from '@mdi/js';
+
+    let world;
 </script>
 
 <div class="content">
-    <h1>Hello { world }</h1>
-    <p>Lorem ipsum...</p>
+    <div class="button-container">
+        <Button class="bg-dark text-light" on:click={() => world = 'World !'}>Say Hello to the world</Button>
+    </div>
+
+    <div class="text-grey">
+        Hello { world || '' }
+        <Icon src={mdiFishOff} color="var(--color-primary)" size="1"></Icon>
+    </div>
 </div>
 
 <style lang="scss">
-  @import "./src/styles/variables";
+  @import "src/styles/variables";
 
-  h1 {
-    color: $primary;
-    border-bottom: 2px solid $secondary;
-  }
-
-  h2 {
-    color: $primary;
-    border-bottom: 2px solid $secondary;
-  }
-
-  p {
-    font-weight: 600;
+  .content {
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    gap: $padding-normal;
   }
 </style>

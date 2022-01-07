@@ -1,22 +1,18 @@
-import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { defineConfig } from "vite";
-const path = require("path");
+import {svelte} from "@sveltejs/vite-plugin-svelte";
+import {defineConfig} from "vite";
 
 export default defineConfig({
-  server: {
-    port: 5000,
-  },
-  plugins: [svelte()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "/src"),
+    server: {
+        port: 5000,
     },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@use "./src/styles/variables.scss" as *;',
-      },
+    plugins: [
+        svelte()
+    ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: '@import "./src/styles/variables.scss";',
+            },
+        },
     },
-  },
 });
